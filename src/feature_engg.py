@@ -69,15 +69,16 @@ class FeatureEngineer:
         Applies the pipeline using the SAVED scaler. This is for inference.
         """
         scaler,pca = self._load_model()
-        print('hi')
         
         df_processed = self._create_and_select_features(df.copy())
         
 
         scaled_data = scaler.transform(df_processed)
-        print('hi1')
-        final_data = pca.transform(scaled_data)
-        print('hi2')
+        pca_data = pca.transform(scaled_data)
+
+        pca_cols = [f'PC_{i+1}' for i in range(pca.n_components_)]
+        df_final = pd.DataFrame(pca_data, index=df.index, columns=pca_cols)
+        
+        return df_final
                 
-        return final_data
 

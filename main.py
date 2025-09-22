@@ -18,6 +18,8 @@ def main():
     fe.fit(df_transformed)
     X = fe.transforms(df_transformed)
 
+    X.to_csv('data/pca_features_for_clustering.csv', index=False)
+
     clusterer = KMeansClusterer(n_clusters=3)
     labels = clusterer.train(X)
     df1 = df_transformed.copy()
