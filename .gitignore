@@ -1,0 +1,29 @@
+# Python virtual environment
+venv/
+/venv/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE and OS-specific files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Data files (Best practice is to not track large data files)
+# If your marketing_data_raw.csv is large, uncomment the line below.
+# data/marketing_data_raw.csv
+
+# Environment variables file
+.env
